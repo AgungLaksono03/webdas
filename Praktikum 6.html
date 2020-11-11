@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html>
+    <style>
+    body {
+        background-color: #ddd;
+        font-size: 17px;
+        font-family: 'Rubik', Arial, Helvetica, sans-serif;
+        margin: 10px 5px;
+    }
+    
+    /* HEADER */
+    
+    .header{
+        grid-area: header;
+        text-align: left;
+        font-family: "Bauhaus 93";
+        font-size: 2em;
+        border: 1px solid;
+    }
+    
+    .header p{
+        font-style: italic;
+    }
+    
+    .header p{
+        font-size: 18px;
+    }
+    
+    .container{
+        display: grid;
+        grid-template-areas: 
+        'header header'
+        'menu menu'
+        'content content-2'
+        'content content-2';
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .header h1{
+        color: black;
+    }
+    
+    .header a{
+        text-decoration: none;
+    }
+    
+    /* NAV */
+    
+    .menu{
+        grid-area: menu;
+        border: 1px solid;
+    }
+    
+    .menu ul{
+        list-style: none;
+        display: flex;
+        gap: 5px;
+        margin: 20px 0px;
+    }
+    
+    .menu li{
+        width: 150px;
+        border: 5px solid white;
+        border-radius: 5px;
+        text-align: center;
+        background-color: rgb(62, 93, 129);
+    }
+    
+    .menu ul li a{
+        display: block;
+        text-decoration: none;
+        color: yellow;
+        font-size: 1.1em;
+        text-transform: uppercase;
+    }
+    
+    .menu a:hover{
+        background-color: rgb(62, 93, 129);
+        color: white;
+    }
+    
+    /* Content Kiri */
+    
+    .content{
+        padding: 10px 20px;
+        grid-area: content;
+        border: 1px solid;
+    }
+    
+    .content h3{
+        font-size: 1.3em;
+    }
+    
+    .content p{
+        text-align: justify;
+    }
+    
+    .content p a{
+        color: black;
+    }
+    
+    .content h2{
+        border: 5px solid white;
+        text-align: center;
+        color: yellow;
+        border-radius: 5px;
+        background-color: rgb(62, 93, 129);
+    }
+    
+    .content .forms table{
+        margin: 0px auto;
+        background-color: gray;
+        padding: 45px;
+    }
+    
+    .content .forms table tr td button{
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 0px 10px;
+        text-align: left;
+    }
+    
+    /* Content Kanan */
+    
+    .content-2{
+        grid-area: content-2;
+        border: 1px solid;
+    }
+    
+    .content-2 h3{
+        border: 5px solid white;
+        border-radius: 5px;
+        color: yellow;
+        background-color: rgb(62, 93, 129);
+        text-align: center;
+    }
+    
+    .tutorial ol{
+        list-style: none;
+        padding-right: 40px;
+        text-align: center;
+    }
+    
+    .content-2 ol li a{
+        display: block;
+        text-decoration: none;
+        height: 30px;
+        color: black;
+    
+    }
+    
+    .content-2 ol li a:hover{
+        background-color: rgb(62, 93, 129);
+        color: yellow;
+    }
+    
+    .content-2 ul li a{
+        text-decoration: none;
+        color: black;
+        display: block;
+        height: 30px;
+    }
+    
+    .content-2 ul li{
+        padding-right: 40px;
+    }
+    
+    .content-2 ul li a:hover{
+        background-color: rgb(62, 93, 129);
+        color: yellow;
+    }
+    
+    .ebook img{
+        display: block;
+        margin: auto;
+        width: 200px;
+    }
+    
+    /* Footer */
+    
+    .footer{
+        font-size: 14px;
+        text-align: center;
+        border: 1px solid;
+        padding: 1px;
+    }
+    
+    /*Produk*/
+    
+    .produk-1 h3{
+        text-align: center;
+        color: rgb(231, 173, 85);
+        text-transform: uppercase;
+    }
+    
+    .produk-1 img{
+        width: 200px;
+        padding-bottom: 20px;
+    }
+    
+    .produk-1 .forms table {
+        width: 100%;
+    }
+    
+    /* Beranda */
+    
+    .beranda{
+        display: block;
+        background-color: white;
+        padding: 10px;
+        margin: 5px;
+    }
+    
+    .beranda img {
+        width: 150px;
+    }
+    
+    .keterangan {
+        float: right;
+        width: 70%;
+    }
+    
+    .keterangan p {
+        color: rgb(90, 90, 90);
+    }
+    
+    /* Kategori */
+    
+    .kategori {
+        background-color: white;
+        display: flex;
+        margin: 0px 5px;
+    }
+    
+    .katket {
+        padding: 10px 10px;
+    }
+    
+    .kategori p {
+        background-color: white;
+        margin: 0px auto;
+        text-align: center;
+        grid-area: p;
+        color: black;
+    }
+    
+    .katket img {
+        background-color: white;
+        margin: 0px 10px;
+        width: 135px;
+        grid-area: img;
+    }
+    
+    .kategori a{
+        text-decoration: none;
+    }
+    
+    .kategori a:hover{
+        background-color: rgb(62, 93, 129);
+        color: yellow;
+    }
+    
+    .kategori a:hover p{
+        background-color: rgb(62, 93, 129);
+        color: yellow;
+    }
+    
+    /* RESPONSIVE */
+    
+    @media (max-width: 800px)
+    {
+        .container{
+            grid-template-areas: 
+            'header'
+            'menu'
+            'content-2'
+            'content'
+            'footer';
+        }
+    
+        .menu{
+            background-color: #ddd;
+        }
+    
+        .menu ul{
+            flex-direction: column;
+            background-color:
+        }
+    
+        .menu ul li{
+            width: 95%;
+            padding: 5px 0px;
+        }
+    
+        .menu ul li a{
+            text-align: center;
+        
+        }
+        .menu ul li input{
+            size: 10px;
+            padding: 5px 0px;
+    
+        }
+    
+        .menu ul li button{
+            width: 60%;
+            padding: 5px 0px;
+        }
+    }
+        </style>
+    <head>
+        <title>Praktikum 6</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+        <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Pasar Online</h1>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Tempat Nyaman Berbelanja</p>
+            </div>
+            <div class="content-2">
+                <div class="tutorial">
+                    <h3>Main Menu</h3>
+                    <ol>
+                        <li><a href="">Produk</a></li>
+                        <li><a href="">Belanja</a></li>
+                        <li><a href="">Kontak</a></li>
+                        <li><a href="">Bantuan</a></li>
+                        <li><a href="">Berita</a></li>
+                        <li><a href="buku tamu.html">Buku Tamu</a></li>
+                        <li><a href="">Tips</a></li>
+                        <li><a href="">Pelanggan</a></li>
+                    </ol>
+                </div>
+                <div class="ebook">
+                    <h3>Sponsor</h3>
+                    <img src="telkomsel.jpg" alt="TELKOMSEL">
+                    <h4>Mas Sellow Cell</h4>
+                </div>
+                <div class="links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="">Dian Nuswantoro University</a></li>
+                        <li><a href="">Blog Kami</a></li>
+                        <li><a href="">Jawa Pos</a></li>
+                        <li><a href="">Detik</a></li>
+                        <li><a href="">Tentang Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="" alt="">Beranda</a></li>
+                    <li><a href="" alt="">Tentang Kami</a></li>
+                    <li><a href="" alt="">Produk</a></li>
+                    <li><a href="" alt="">Belanja</a></li>
+                    <li><a href="" alt="">Bantuan</a></li>
+                    <li><a href="buku tamu.html" alt="">Buku Tamu</a></li>
+                    <input type="text">
+                    <button>Go</button>
+                </ul>
+            </nav>
+            <div class="content">
+                <h3>PASAR ONLINE</h3>
+                <p>Kami hadir untuk melayani semua kebutuhan anda. Produk yang kami tawarkan berkualitas no satu
+                    dan tiada dua nya. Buktikan sendiri !</p>
+                <p>Ayoo berbelanja.......!</p>
+                <h3>INFO</h3>
+                <p>Ingin memesan dan membeli klik <a href="" alt="">belanja</a></p>
+                <h3>LOKASI KAMI</h3>
+                <p> Wonosalam, Demak, Jawa Tengah, Indonesia.</p>
+                <h2>Simulasi Order Barang</h2>
+                <div class="forms">
+                    <form>
+                        <table>
+                            <tr>
+                                <td>Harga</td>
+                                <td>:</td>
+                                <td><input type="text" size="10"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah</td>
+                                <td>:</td>
+                                <td><input type="text" size="10"></td>
+                            </tr>
+                            <tr>
+                                <td>Diskon</td>
+                                <td>:</td>
+                                <td><input type="text" size="10"> %</td>
+                            </tr>
+                            <tr>
+                                <td>Jml.Diskon</td>
+                                <td>:</td>
+                                <td><input type="text" size="10"></td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>:</td>
+                                <td><input type="text" size="10"></td>
+                            </tr>
+                            <tr>
+                                <td><button>Hitung</button></td>
+                                <td></td>
+                                <td><button>Reset</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <footer>
+                <p>Copyright © 2020 A11.2019.12328
+                     - Agung Laksono , All Rights Reserved</p>
+            </footer>
+        </div>
+    </body>
+</html>
